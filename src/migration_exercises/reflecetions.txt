@@ -1,0 +1,5 @@
+1) Because changing your model only updates your python code, not the database itself so the schema doesn't really change.
+2) The migrations folder stores the history of all database changes.
+3) Deleting will destroy all existing data, updating allows you to evolve a database without getting rid of previous data.
+4) Because JSON doesn't support datetime objects like python does so it will cause an error if not parsed
+5) There can be a schema mismatch, data loss, invalid data or other issues.
