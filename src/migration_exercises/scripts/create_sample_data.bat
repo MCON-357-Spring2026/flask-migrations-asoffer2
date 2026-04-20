@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-if "%BASE_URL%"=="" set BASE_URL=http://127.0.0.1:5000
+if "%BASE_URL%"=="" set BASE_URL=http://127.0.0.1:5000/exercises
 
 echo Creating student...
 curl -sS -X POST "%BASE_URL%/students" ^
