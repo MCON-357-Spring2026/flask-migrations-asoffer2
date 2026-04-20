@@ -60,6 +60,7 @@ def create_assignment():
     title = data.get("title")
     max_score = data.get("max_score")
     raw_due_date = data.get("due_date")
+    parsed_date = None
     try:
         parsed_date = date.fromisoformat(raw_due_date)
     except Exception as e:
@@ -87,7 +88,7 @@ def create_grade():
     score = data.get("score")
     student_id = data.get("student_id")
     assignment_id = data.get("assignment_id")
-    comment = data.get("comment") or ""
+    comment = data.get("comment") or None
 
     if score is None or student_id is None or assignment_id is None:
         return jsonify({"error": "score, student_id, and assignment_id are required"}), 400
